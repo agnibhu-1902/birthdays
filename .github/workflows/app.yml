@@ -1,1 +1,16 @@
+name: Deploy to Production
 
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: 
+      name: Production
+      url: http://agnibhu.pythonanywhere.com
+  
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v2
